@@ -1,13 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react'
+import axios from 'axios';
 
 function App() {
+
+  const [city, setCity] = useState([])
+
+  useEffect(() => {
+    const cityFetchFunction = async () => {
+      const {data} = await axios.get('http://localhost:5001')
+      console.log(data)
+      setCity(data)
+    }
+
+    cityFetchFunction()
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to Me
+          Welcome to Me and im from {city.length > 0 ? city[1].country : 'MARS '}
         </p>
         <a
           className="App-link"
