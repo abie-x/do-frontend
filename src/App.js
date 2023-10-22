@@ -22,7 +22,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to Me and im from {city.length > 0 && city[city.length - 1].country}
+          Welcome to Me and i'm from {city.length > 0 && city[city.length - 1].country}
         </p>
         <a
           className="App-link"
