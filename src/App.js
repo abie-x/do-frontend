@@ -24,7 +24,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to Me and I'm from {city.length > 0 && city[city.length - 1].country}
+          Hello world! I'm from {city.length > 0 && city[city.length - 1].country}
         </p>
         <GoogleOAuthProvider clientId="647491082373-rv0gp6u4imerdouf1ohs7vch7c9091k7.apps.googleusercontent.com">
           <GoogleLogin
