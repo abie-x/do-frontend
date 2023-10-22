@@ -26,14 +26,17 @@ function App() {
         <p>
           Welcome to Me and I'm from {city.length > 0 && city[city.length - 1].country}
         </p>
-        <GoogleOAuthProvider clientId="647491082373-rv0gp6u4imerdouf1ohs7vch7c9091k7.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="647491082373-7alnjf9gurdqilnmm9h2s7satj1iehc8.apps.googleusercontent.com">
           <GoogleLogin
-            onSuccess={credentialResponse => {
+            onSuccess={async (credentialResponse) => {
               var decoded = jwt_decode(credentialResponse.credential);
-              console.log(decoded);
+              if(decoded) {
+                const {data} = await axios.post('https://king-prawn-app-pyqbx.ondigitalocean.app/app/api/cities', {name: decoded.given_name, country: 'Russia', rank: 8})
+                console.log(data)
+              }
             }}
             onError={() => {
-              console.log('Login Failed');
+              console.log('Login Failed');  
             }}
           />
         </GoogleOAuthProvider>
