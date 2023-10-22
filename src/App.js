@@ -26,7 +26,7 @@ function App() {
         <p>
           Welcome to Me and i'm from {city.length > 0 && city[city.length - 1].country}
         </p>
-        <GoogleOAuthProvider clientId="647491082373-kg3der1pdrfp8l6evlrj73lhu00551an.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="647491082373-rv0gp6u4imerdouf1ohs7vch7c9091k7.apps.googleusercontent.com">
           <GoogleLogin
             onSuccess={credentialResponse => {
               var decoded = jwt_decode(credentialResponse.credential);
