@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     const cityFetchFunction = async () => {
-      const {data} = await axios.get('http://localhost:5001')
+      const {data} = await axios.get('https://king-prawn-app-pyqbx.ondigitalocean.app/app')
       console.log(data)
       setCity(data)
     }
